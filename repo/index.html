@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Travel Planner App</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+</head>
+<body>
+
+  <button id="toggleTheme" title="Toggle Dark Mode">🌙</button>
+
+  <header>
+    <h1>Travel Planner</h1>
+  </header>
+
+  <nav id="navbar">
+    <ul>
+      <li><a href="#map">Map</a></li>
+      <li><a href="#weather">Weather Info</a></li>
+      <li><a href="#tripDetails">Trip Details</a></li>
+      <li><a href="#bookingForm">Booking</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+    </ul>
+  </nav>
+
+  <section class="search-section">
+    <input type="text" id="destination" placeholder="Enter destination..." />
+    <button id="searchBtn">Search</button>
+    <button id="getWeather">Weather Info</button>
+  </section>
+
+  <div id="map"></div>
+
+  <section id="weather">
+    <h2>Weather Info</h2>
+    <div id="loading">Loading weather data...</div>
+    <div id="weatherResult"></div>
+  </section>
+
+  <section id="tripDetails">
+    <h2>Trip Details</h2>
+    <div id="accordion">
+      <h3>Trip Schedule</h3>
+      <div>
+        <ul id="tripList">
+          <li>Book flight tickets</li>
+          <li>Reserve accommodation</li>
+          <li>Pack essentials</li>
+          <li>Plan sightseeing tours</li>
+        </ul>
+      </div>
+      <h3>Other Notes</h3>
+      <div>
+        <p>You can add travel insurance, check visa requirements, and explore local restaurants.</p>
+      </div>
+    </div>
+  </section>  
+
+  <section class="booking">
+    <h2>Book Your Trip</h2>
+    <form id="bookingForm">
+      <label for="name">Name:</label>
+      <input type="text" name="name" required />
+      
+      <label for="email">Email:</label>
+      <input type="email" name="email" required />
+
+      <label for="date">Choose Date:</label>
+      <input type="text" id="datepicker" name="date" required />
+
+      <button type="submit">Book</button>
+    </form>
+  </section>
+
+  <section id="gallery">
+    <h2>Destination Gallery</h2>
+    <div class="carousel">
+      <img src="pictures/image4.jpg" alt="Beach">
+      <img src="pictures/image2.jpg" alt="Mountains">
+      <img src="pictures/image3.jpg" alt="City">
+    </div>
+  </section>
+  
+  <footer style="text-align: center; margin-top: 50px; padding: 20px 0; font-size: 14px; color: #666;">
+    © Copyright 2025 Group 11. All rights reserved.
+  </footer>
+
+
+  <script src="script.js"></script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDawNtNoo3H5wzDhCZq2uXhN-ACIedGgv8&callback=initMap">
+  </script>
+</body>
+</html>
